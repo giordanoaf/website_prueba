@@ -8,25 +8,25 @@
     Hello World!
     <div id="mydiv"></div>
 
-    <script>
-      const apiUrl = 'https://function-version3-2023.azurewebsites.net/api/http_trigger?code=zlvaPkk6s3z9QgIv6be1A8WxSP4SE_B2ICDXriDookepAzFu9a1m_Q==';
-      axios.get(apiUrl)
-       .then(function(response) {
-         var BrowserName = data;
-          document.getElementById('mydiv').innerHTML = BrowserName;
-          console.log(data);
-       })
-       .catch(function(error) {
-       console.error('Error:', error);
-       });
-    </script>
+
       
-<!--     <script>
-      
+<script>
+      const response = await fetch(`${baseURLCategories}${genre}${opts}`, {
+	        'mode': 'cors',
+	        'headers': {
+            	'Access-Control-Allow-Origin': '*',
+        	}
+    	});
+  
       const apiUrl = 'https://function-version3-2023.azurewebsites.net/api/http_trigger?code=zlvaPkk6s3z9QgIv6be1A8WxSP4SE_B2ICDXriDookepAzFu9a1m_Q==';
 
     // Make a GET request
-    fetch(apiUrl)
+    fetch(apiUrl, {
+	        'mode': 'cors',
+	        'headers': {
+            	'Access-Control-Allow-Origin': '*',
+        	}
+    	})
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -41,6 +41,6 @@
       .catch(error => {
         console.error('Error:', error);
       });
-    </script> -->
-  </body>
+    </script> 
+  </body> 
 </html>
