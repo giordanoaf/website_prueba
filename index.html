@@ -3,6 +3,29 @@
     
   </head>
   <body>
+    
     Hello World!
+    <div id="mydiv"></div>
+
+    <script>
+      const apiUrl = 'https://function-version3-2023.azurewebsites.net/api/http_trigger?code=zlvaPkk6s3z9QgIv6be1A8WxSP4SE_B2ICDXriDookepAzFu9a1m_Q==';
+
+    // Make a GET request
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        var BrowserName = data;
+        document.getElementById('mydiv').innerHTML = BrowserName;
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    </script>
   </body>
 </html>
